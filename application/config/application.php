@@ -13,14 +13,18 @@ $config['hashed'] = 'VFUUl2rWS6I5EdSFU2JJyQ==';
 
 $config['appkey'] = '1029384756';
 
+$config['appsalt'] = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
 $config['lmanuser.usingbackendfrontend'] = TRUE;
 $config['user_id_column_name'] = "id_user";
 $config['profil_id_column_name'] = "id_profil";
 
+$config['application_db_schema_name'] = 'sc_presensi';
+
 /**
  * tabel profil lain yang digunakan selain backbone_profil
  */
-$config['another_profil_tablename'] = "sc_sidika.tr_pegawai_profil";
+$config['another_profil_tablename'] = "sc_presensi.tr_pegawai_profil";
 $config['another_profil_properties']['partial_form_view'] = "back_bone/member/atlant/tr_pegawai_profil";
 $config['another_profil_properties']['form_config'] = array(
     "using_select2" => TRUE,
@@ -39,9 +43,9 @@ $config['another_profil_properties']['foreign_key'] = "id_profil";
 $config['another_profil_properties']['foreign_key_to_another_profile'] = "id_pegawai";
 $config['another_profil_properties']['columns'] = array();
 $config['another_profil_properties']['related_tables'] = array(
-    "sc_sidika.ref_pegawai" => array(
+    "sc_presensi.ref_pegawai" => array(
         "fkey" => "id_pegawai",
-        "reference_to" => "sc_sidika.tr_pegawai_profil",
+        "reference_to" => "sc_presensi.tr_pegawai_profil",
         "columns" => array(
             "gelar_depan",
             "gelar_belakang",
@@ -57,9 +61,9 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.ref_status_perkawinan" => array(
+    "sc_presensi.ref_status_perkawinan" => array(
         "fkey" => "id_status_perkawinan",
-        "reference_to" => "sc_sidika.ref_pegawai",
+        "reference_to" => "sc_presensi.ref_pegawai",
         "columns" => array(
             "id_status_perkawinan",
             "status_perkawinan",
@@ -67,10 +71,10 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.tr_pegawai_skpd" => array(
+    "sc_presensi.tr_pegawai_skpd" => array(
         "fkey" => "id_pegawai",
         "table_alias" => "trpegskpd",
-        "reference_to" => "sc_sidika.ref_pegawai",
+        "reference_to" => "sc_presensi.ref_pegawai",
         "columns" => array(
             "id_pegawai_skpd",
             array("tgl_mulai", "tgl_mulai_peg_skpd"),
@@ -83,7 +87,7 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.ref_skpd" => array(
+    "sc_presensi.ref_skpd" => array(
         "fkey" => "id_skpd",
         "reference_to" => "trpegskpd",
         "columns" => array(
@@ -98,7 +102,7 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.tr_pegawai_skpd_jabatan" => array(
+    "sc_presensi.tr_pegawai_skpd_jabatan" => array(
         "fkey" => "id_pegawai_skpd",
         "table_alias" => "trpegskpdjab",
         "reference_to" => "trpegskpd",
@@ -114,7 +118,7 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.ref_jabatan" => array(
+    "sc_presensi.ref_jabatan" => array(
         "fkey" => "id_jabatan",
         "table_alias" => "trjab",
         "reference_to" => "trpegskpdjab",
@@ -124,10 +128,10 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.tr_pegawai_golongan" => array(
+    "sc_presensi.tr_pegawai_golongan" => array(
         "fkey" => "id_pegawai",
         "table_alias" => "trpeggol",
-        "reference_to" => "sc_sidika.ref_pegawai",
+        "reference_to" => "sc_presensi.ref_pegawai",
         "columns" => array(
             "id_pegawai_golongan",
             "tgl_ditetapkan",
@@ -139,7 +143,7 @@ $config['another_profil_properties']['related_tables'] = array(
         ),
         "referenced" => "LEFT"
     ),
-    "sc_sidika.ref_golongan" => array(
+    "sc_presensi.ref_golongan" => array(
         "fkey" => "id_golongan",
         "table_alias" => "trgol",
         "reference_to" => "trpeggol",
@@ -163,7 +167,7 @@ $config['application_active_layout'] = 'atlant';
  * ini digunakan untuk memberikan nama schema
  * ketika menggunakan basis data postgres
  */
-$config['application_db_schema_name'] = 'sc_presensi';
+
 
 /** ini digunakan ketika aplikasi telah diupload ke hosting */
 $config['application_path_location'] = '/home/ikatifau/public_html/';
