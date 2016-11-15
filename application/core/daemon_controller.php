@@ -219,9 +219,9 @@ class DAEMON_Controller extends CI_Controller {
 					$this->db->where('service', SERVICE_NAME);
 					$this->db->update('service_daemons', $args)
 					
-				}else{	
+                                }else{	
 
-					$args = array(
+                                    $args = array(
 									'server_id'    => SERVER_ID,
 									'server_name'  => IDEN,
 									'service'      => SERVICE_NAME,
