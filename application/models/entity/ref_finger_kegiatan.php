@@ -23,7 +23,7 @@ class Ref_finger_kegiatan extends LWS_model {
     protected $attribute_labels = array(
         "id_list" => array("id_list", ""),
         "id_kegiatan" => array("id_kegiatan", ""),
-        "id_peg" => array("id_peg", ""),
+        "id_pegawai" => array("id_pegawai", ""),
         "created_date" => array("created_date", ""),
         "created_by" => array("created_by", ""),
         "modified_date" => array("modified_date", ""),
@@ -33,7 +33,7 @@ class Ref_finger_kegiatan extends LWS_model {
     protected $rules = array(
         array("id_list", ""),
         array("id_kegiatan", ""),
-        array("id_peg", ""),
+        array("id_pegawai", ""),
         array("created_date", ""),
         array("created_by", ""),
         array("update_date", ""),
@@ -50,10 +50,10 @@ class Ref_finger_kegiatan extends LWS_model {
             ),
             "referenced" => "INNER"
         ),
-        "ir_list_pegawai" => array(
-            "fkey" => "id_peg",
+        "ref_pegawai" => array(
+            "fkey" => "id_pegawai",
             "columns" => array(
-                "nama_peg",
+                "nama_sambung",
                 
             ),
             "referenced" => "INNER"

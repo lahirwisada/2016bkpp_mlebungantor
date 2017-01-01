@@ -81,7 +81,7 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                 </td>
                                                 
                                                 <td>
-                                                    <?php echo beautify_str($record->nama_peg) ?>
+                                                    <?php echo beautify_str($record->nama_sambung) ?>
                                                 </td>
                                                 
                                                 <td>
