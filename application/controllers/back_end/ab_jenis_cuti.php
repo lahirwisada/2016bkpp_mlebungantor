@@ -45,7 +45,7 @@ class ab_jenis_cuti extends Back_end{
     public function get_like() {
         $keyword = $this->input->post("keyword");
 
-        $mesin_found = $this->kegiatan_model->get_like($keyword);
+        $mesin_found = $this->ab_jenis_cuti_model->get_like($keyword);
         
         $this->to_json($mesin_found);
     }
