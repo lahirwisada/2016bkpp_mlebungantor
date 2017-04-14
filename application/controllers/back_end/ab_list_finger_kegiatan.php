@@ -61,7 +61,7 @@ class ab_list_finger_kegiatan extends Back_end{
     public function detail($crypted_id_kegiatan=FALSE,$id = FALSE) {
         parent::detail($id, array(
             "id_kegiatan",
-            "id_peg",
+            "id_pegawai",
             
             
         ));
