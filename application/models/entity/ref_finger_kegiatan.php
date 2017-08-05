@@ -54,6 +54,7 @@ class Ref_finger_kegiatan extends LWS_model {
             "fkey" => "id_pegawai",
             "columns" => array(
                 "nama_sambung",
+                "scan_id_base64",
                 
             ),
             "referenced" => "INNER"

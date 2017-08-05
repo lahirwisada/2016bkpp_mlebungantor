@@ -14,8 +14,11 @@ class Absensi_model extends ref_absensi {
             function __construct(){
         parent::__construct();
     }
-    public function all($force_limit = FALSE, $force_offset = FALSE) {
-        return parent::get_all('', FALSE, TRUE, FALSE, 1, TRUE, $force_limit, $force_offset);
+    public function all($id_peg = FALSE, $force_limit = FALSE, $force_offset = FALSE) {
+
+        $this->db->where($this->table_name . ".approval is null ");
+
+        return parent::get_all($this->searchable_fields, FALSE, TRUE, FALSE, 1, TRUE, $force_limit, $force_offset);
     }
     
     function get_data(){
@@ -30,5 +33,28 @@ class Absensi_model extends ref_absensi {
     function insert_data(array $data){
          $query = $this->db->insert('sc_presensi."ir_attendance"',$data);
         return $query->result();
+    }
+    
+    function approve($param=FALSE){
+        $data = array(
+               'approval' => 1
+            );
+        if ($param){
+//            $this->db->update('mytable', $data, "id_peg= 1");
+            $this->db->where('id',$param);
+            $this->db->update('sc_presensi."ir_attendance"',$data);
+        }
+        return 'Aprroved';
+    }
+    function reject($param=FALSE){
+        $data = array(
+               'approval' => 2
+            );
+        if ($param){
+//            $this->db->update('mytable', $data, "id_peg= 1");
+            $this->db->where('id',$param);
+            $this->db->update('sc_presensi."ir_attendance"',$data);
+        }
+        return 'Rejected';
     }
 }

@@ -49,6 +49,7 @@ class Ref_kegiatan extends LWS_model {
             "fkey" => "id_mesin",
             "columns" => array(
                 "lokasi_mesin",
+                "ip_mesin",
                 
             ),
             "referenced" => "INNER"

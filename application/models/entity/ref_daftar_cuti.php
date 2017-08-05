@@ -68,15 +68,15 @@ class ref_daftar_cuti extends LWS_model {
             ),
             "referenced" => "INNER"
         ),
-//        "ir_list_pegawai" => array(
-//            "fkey" => "id_peg",
+//        "ref_pegawai" => array(
+//            "fkey" => array("modified_by", "id_pegawai"), 
 //            "columns" => array(
-//                "nama_peg",
+//                "nama_depan",
 //                
 //            ),
 //            "referenced" => "INNER"
 //        ),
-//        
+        
     );
     protected $attribute_types = array();
 

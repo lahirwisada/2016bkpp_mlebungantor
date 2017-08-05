@@ -30,4 +30,12 @@ class ab_mesin_model extends ref_ab_mesin {
         return $result;
         
     }
+    public function get_mesin() {
+        $this->db->select('ip_mesin'); 
+        $this->db->from($this->table_name);  
+//    $this->db->where('res_id', $res_id);
+    return $this->db->get()->result_array();
+   
+        
+    }
 }

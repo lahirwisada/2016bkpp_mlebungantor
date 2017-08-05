@@ -23,6 +23,7 @@ class Ref_ab_mesin extends LWS_model {
     protected $attribute_labels = array(
         "id_mesin" => array("id_mesin", ""),
         "lokasi_mesin" => array("lokasi_mesin", ""),
+        "ip_mesin" => array("ip_mesin", ""),
 //        "created_date" => array("created_date", ""),
 //        "created_by" => array("created_by", ""),
 //        "modified_date" => array("modified_date", ""),
@@ -32,6 +33,7 @@ class Ref_ab_mesin extends LWS_model {
     protected $rules = array(
         array("id_mesin", ""),
         array("lokasi_mesin", ""),
+        array("ip_mesin", ""),
 //        array("created_date", ""),
 //        array("created_by", ""),
 //        array("modified_date", ""),
