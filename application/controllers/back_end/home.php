@@ -48,11 +48,17 @@ class Home extends Back_end {
 //        $this->set("terbayar_perbulan", $terbayar_perbulan);
 //        $this->set("pendaftar_perbulan", $pendaftar_perbulan);
 //        $this->set("var_bulan", $this->month());
-//        $this->set("additional_js", "back_end/home/js/index_js");
-//        $this->add_jsfiles(array(
-//            "avant/plugins/charts-flot/jquery.flot.min.js",
-//            "avant/plugins/charts-flot/jquery.flot.resize.min.js",
-//        ));
+        $this->set("additional_js", "back_end/home/js/index_js");
+        $this->add_jsfiles(array(
+            
+            "avant/plugins/charts-flot/jquery.flot.min.js",
+            "avant/plugins/charts-flot/jquery.flot.resize.min.js",
+            "avant/plugins/charts-flot/jquery.flot.orderBars.min.js",
+            "avant/plugins/charts-flot/jquery.flot.canvas.min.js",
+            
+            "atlant/plugins/morris/raphael-min.js",
+            "atlant/plugins/morris/morris.min.js",
+        ));
     }
 
     private function month() {
