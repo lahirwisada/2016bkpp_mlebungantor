@@ -7,7 +7,7 @@ $paging_set = isset($paging_set) ? $paging_set : FALSE;
 $active_modul = isset($active_modul) ? $active_modul : 'none';
 $next_list_number = isset($next_list_number) ? $next_list_number : 1;
 //$detail_user = isset($detail_user) ? $detail_user : false;
-//var_dump($detail_user);
+//var_dump($records);exit();
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -35,11 +35,7 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <a href="<?php echo base_url('back_end/' . $active_modul . '/detail'); ?>" class="btn btn-success btn-block">
-                                    <span class="fa fa-plus"></span> Tambah baru
-                                </a>
-                            </div>
+                           
                         </div>
                     </form>
                 </div>
@@ -66,6 +62,12 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                         </th>
                                         <th>
                                             Status
+                                        </th>
+                                        <th>
+                                            Jenis Cuti
+                                        </th>
+                                         <th>
+                                            Approver
                                         </th>
                                         
                                         
@@ -99,11 +101,14 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                  <td>
                                                     <?php echo beautify_str($record->nama_cuti) ?>
                                                 </td>
+                                                 <td>
+                                                    <?php echo beautify_str($record->modified_by) ?>
+                                                </td>
                                                 
                                                 <td>
                                                     <div class="btn-group btn-group-sm">
-                                                        <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/detail") . "/" . $record->id_list; ?>">Ubah</a>
-                                                        <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id_list; ?>">Hapus</a>
+                                                        <a class="clsApprove btn btn-default" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/approve") . "/" . $record->id_list; ?>">Approve</a>
+                                                        <a class="clsReject btn btn-default " href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/reject") . "/" . $record->id_list; ?>">Reject</a>
                                                     </div>
                                                 </td>
                                             </tr>

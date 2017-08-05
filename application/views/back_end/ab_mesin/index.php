@@ -54,6 +54,9 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                         <th>
                                             Lokasi Mesin
                                         </th>
+                                        <th>
+                                            IP Mesin
+                                        </th>
                                         
                                         <th width="15%">Aksi</th>
                                     </tr>
@@ -70,9 +73,14 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                 <td>
                                                     <?php echo beautify_str($record->lokasi_mesin) ?>
                                                 </td>
+                                                <td>
+                                                    <?php echo beautify_str($record->ip_mesin) ?>
+                                                </td>
                                                 
                                                 <td>
                                                     <div class="btn-group btn-group-sm">
+                                                        <a class="clsDownload btn btn-default" href="javascript:void(0);" rel="<?php echo base_url("api/client/upload_absen") . "/" . $record->ip_mesin; ?>">Download</a>
+                                                        <a class="clsUpload btn btn-default" href="javascript:void(0);" rel="<?php echo base_url("api/client/download_absen") . "/" . $record->ip_mesin; ?>">Upload</a>
                                                         <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/detail") . "/" . $record->id_mesin; ?>">Ubah</a>
                                                         <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id_mesin; ?>">Hapus</a>
                                                     </div>

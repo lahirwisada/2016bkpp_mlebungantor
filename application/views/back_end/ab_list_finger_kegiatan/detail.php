@@ -24,7 +24,7 @@ $id_kegiatan = isset($id_kegiatan) ? $id_kegiatan : 0;
                         <label class="col-md-3 col-xs-12 control-label">Nama *</label>
                         <div class="col-md-6 col-xs-12">
                             <input type="hidden" name="id_kegiatan" id="txt-id_kegiatan" value="<?php echo $detail_kegiatan ? $detail_kegiatan->id_kegiatan : ""; ?>">
-                            <select id="slc-peg" class="form-control select2-basic" name="id_peg">
+                            <select id="slc-peg" class="form-control select2-basic" name="id_pegawai">
                             </select>                           
                             <span class="help-block"></span>
                         </div>

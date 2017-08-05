@@ -27,6 +27,13 @@ $id_diklat = isset($id_diklat) ? $id_diklat : 0;
                             <span class="help-block"></span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12 control-label">IP Mesin *</label>
+                        <div class="col-md-6 col-xs-12">
+                            <input type="text" name="ip_mesin" id="txt-lokasi" class="form-control" value="<?php echo $detail ? $detail->ip_mesin : ""; ?>">                               
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="panel-footer">

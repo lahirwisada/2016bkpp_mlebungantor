@@ -7,7 +7,7 @@ $paging_set = isset($paging_set) ? $paging_set : FALSE;
 $active_modul = isset($active_modul) ? $active_modul : 'none';
 $next_list_number = isset($next_list_number) ? $next_list_number : 1;
 //$detail_user = isset($detail_user) ? $detail_user : false;
-var_dump($id_parent);
+//var_dump($id_parent);
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -67,9 +67,15 @@ var_dump($id_parent);
                                         <th>
                                             Status
                                         </th>
-                                        
-                                        
+                                         <th>
+                                            Jenis
+                                        </th>
+                                        <?php
+//                                         if($record->status_approval ==0){?>
                                         <th width="15%">Aksi</th>
+                                        <?php
+//                                         }
+                                         ?>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,7 +100,7 @@ var_dump($id_parent);
                                                     <?php echo beautify_str($record->lama_cuti) ?>
                                                 </td>
                                                  <td>
-                                                    <?php echo beautify_str($record->status_approval) ?>
+                                                    <?php echo beautify_str($record->status_approval);?>
                                                 </td>
                                                  <td>
                                                     <?php echo beautify_str($record->nama_cuti) ?>
@@ -102,9 +108,13 @@ var_dump($id_parent);
                                                 
                                                 <td>
                                                     <div class="btn-group btn-group-sm">
+                                                        
+                                                        
                                                         <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/detail") . "/" . $record->id_list; ?>">Ubah</a>
                                                         <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id_list; ?>">Hapus</a>
-                                                    </div>
+                                                    
+                                                    
+                                                </div>
                                                 </td>
                                             </tr>
                                             <?php $next_list_number++; ?>

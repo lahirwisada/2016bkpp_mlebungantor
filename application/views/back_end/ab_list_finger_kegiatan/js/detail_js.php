@@ -7,14 +7,14 @@ $detail_kegiatan = isset($detail_kegiatan) ? $detail_kegiatan : FALSE;
     
     var formDetailPesertaKegiatan = {
         data: {
-            id_peg: null,
+            id_pegawai: null,
             
             
         },
         collectData: function(){
             var self = this;
             
-            self.data.id_peg = $("#slc-peg").val();
+            self.data.id_pegawai = $("#slc-peg").val();
             
             
             return self.data;

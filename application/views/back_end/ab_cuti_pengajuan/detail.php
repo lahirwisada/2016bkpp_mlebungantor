@@ -2,8 +2,8 @@
 $header_title = isset($header_title) ? $header_title : '';
 $active_modul = isset($active_modul) ? $active_modul : 'none';
 $detail = isset($detail) ? $detail : FALSE;
-//var_dump($id_parent);
-//var_dump($detail);
+//var_dump($id_parent); exit();
+//var_dump($detail->status_approval);exit();
 ?>
 
 <div class="row">
@@ -20,7 +20,9 @@ $detail = isset($detail) ? $detail : FALSE;
                 </div>
                 <div class="panel-body">
                    <input type="hidden" name="id_peg" id="txt-id_peg" class="form-control" value="<?php echo $detail ? $detail->id_peg : $id_peg; ?>"> 
-                   <input type="hidden" name="id_skpd" id="txt-id_skpd" class="form-control" value="<?php echo $detail ? $detail->id_parent : $id_parent; ?>"> 
+                   <input type="hidden" name="id_skpd" id="txt-id_skpd" class="form-control" value="<?php echo $id_parent ?>"> 
+                   <input type="hidden" name="status_approval" id="txt-status_approval" class="form-control" value="<?php echo $detail ? $detail->status_approval : ""; ?>"> 
+                   <input type="hidden" name="id_list" id="txt-id_list" class="form-control" value="<?php echo $detail ? $detail->id_list : null ?>"> 
                     <div class="form-group">
                         <label class="col-md-3 col-xs-12 control-label">Jenis Cuti *</label>
                         <div class="col-md-6 col-xs-12">                                            

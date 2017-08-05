@@ -17,7 +17,7 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
             </div>
             <div class="panel-body">
 
-                <div class="block">
+<!--                <div class="block">
                     <?php echo load_partial("back_end/shared/attention_message"); ?>
                     <p>Gunakan Formulir ini untuk melakukan pencarian pada halaman ini.</p>
                     <form class="form-horizontal">
@@ -34,13 +34,13 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <a href="<?php echo base_url('back_end/' . $active_modul . '/detail'); ?>" class="btn btn-success btn-block">
+                                <a href="<?php // echo base_url('back_end/' . $active_modul . '/detail'); ?>" class="btn btn-success btn-block">
                                     <span class="fa fa-plus"></span> Tambah baru
                                 </a>
                             </div>
                         </div>
                     </form>
-                </div>
+                </div>-->
                 <div class="block">
                     <div class="dataTables_wrapper no-footer">
                         <div class="table-responsive">
@@ -59,7 +59,7 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                         <th>
                                             Keterangan
                                         </th>
-                                        <th width="15%">Aksi</th>
+                                        <!--<th width="15%">Aksi</th>-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,20 +70,20 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                     <?php echo $next_list_number; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo beautify_str($record->kode_golongan) ?>
+                                                    <?php echo beautify_str($record->kdGolongan) ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo beautify_str($record->golongan) ?>
+                                                    <?php echo beautify_str($record->kepangkatan) ?>
                                                 </td>
-                                                <td>
-                                                    <?php echo beautify_str($record->keterangan) ?>
-                                                </td>
-                                                <td>
+<!--                                                <td>
+                                                    <?php // echo beautify_str($record->keterangan) ?>
+                                                </td>-->
+<!--                                                <td>
                                                     <div class="btn-group btn-group-sm">
                                                         <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/detail") . "/" . $record->id_golongan; ?>">Ubah</a>
                                                         <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id_golongan; ?>">Hapus</a>
                                                     </div>
-                                                </td>
+                                                </td>-->
                                             </tr>
                                             <?php $next_list_number++; ?>
                                         <?php endforeach; ?>

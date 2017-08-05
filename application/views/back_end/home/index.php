@@ -10,6 +10,7 @@ $header_title = isset($header_title) ? $header_title : '';
                 <h3 class="panel-title"><?php echo $header_title; ?></h3>
             </div>
             <div class="panel-body">
+                
             </div>
 
         </div>

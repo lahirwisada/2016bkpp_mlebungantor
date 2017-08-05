@@ -6,6 +6,7 @@ $field_id = isset($field_id) ? $field_id : FALSE;
 $paging_set = isset($paging_set) ? $paging_set : FALSE;
 $active_modul = isset($active_modul) ? $active_modul : 'none';
 $next_list_number = isset($next_list_number) ? $next_list_number : 1;
+//var_dump($paging_set);exit();
 ?>
 <div class="row">
     <div class="col-md-12">
@@ -19,8 +20,8 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
 
                 <div class="block">
                     <?php echo load_partial("back_end/shared/attention_message"); ?>
-                    <p>Gunakan Formulir ini untuk melakukan pencarian pada halaman ini.</p>
-                    <form class="form-horizontal">
+                    <!--<p>Gunakan Formulir ini untuk melakukan pencarian pada halaman ini.</p>-->
+<!--                    <form class="form-horizontal">
                         <div class="form-group">
                             <div class="col-md-8">
                                 <div class="input-group">
@@ -39,7 +40,7 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                 </a>
                             </div>
                         </div>
-                    </form>
+                    </form>-->
                 </div>
                 <div class="block">
                     <div class="dataTables_wrapper no-footer">
@@ -51,18 +52,12 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                             No
                                         </th>
                                         <th>
+                                            Kode SKPD
+                                        </th>
+                                        <th>
                                             Nama SKPD
                                         </th>
-                                        <th>
-                                            Alamat
-                                        </th>
-                                        <th>
-                                            Website
-                                        </th>
-                                        <th>
-                                            No. Urut
-                                        </th>
-                                        <th width="15%">Aksi</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -73,25 +68,13 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                     <?php echo $next_list_number; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo beautify_str($record->nama_skpd)." ".beautify_str($record->abbr_skpd) ?>
+                                                    <?php echo beautify_str($record->kdOrganisasi) ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo beautify_str($record->alamat_skpd)." ".beautify_str($record->kodepos) ?>
-                                                    <br />
-                                                    <?php echo beautify_str($record->no_telp)." ".$record->email ?>
+                                                    <?php echo beautify_str($record->namaOrganisasi) ?>
+                                                    
                                                 </td>
-                                                <td>
-                                                    <?php echo $record->website ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo beautify_str($record->col_order) ?>
-                                                </td>
-                                                <td>
-                                                    <div class="btn-group btn-group-sm">
-                                                        <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/detail") . "/" . $record->id_skpd; ?>">Ubah</a>
-                                                        <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id_skpd; ?>">Hapus</a>
-                                                    </div>
-                                                </td>
+                                                
                                             </tr>
                                             <?php $next_list_number++; ?>
                                         <?php endforeach; ?>

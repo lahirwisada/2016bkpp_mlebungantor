@@ -39,7 +39,7 @@ $detail = isset($detail) ? $detail : FALSE;
         minimumInputLength: 2
     };
 
-<?php if ($detail && $detail->id_peg != ""): ?>
+<?php if ($detail && $detail->id_pegawai != ""): ?>
         peg_cfp.data = [
             {
                 id: '<?php echo $detail->id_pegawai ?>',
@@ -52,8 +52,8 @@ $detail = isset($detail) ? $detail : FALSE;
 //        alert("ahahahah");
         
         $("#slc-peg").select2(peg_cfp);
-<?php if ($detail && $detail->id_peg!= ""): ?>
-            $("#slc-peg option").text("<?php echo $detail->nama_peg ?>").trigger("change");
+<?php if ($detail && $detail->id_pegawai!= ""): ?>
+            $("#slc-peg option").text("<?php echo $detail->nama_sambung ?>").trigger("change");
             ;
 <?php endif; ?>
     });

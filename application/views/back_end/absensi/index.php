@@ -63,8 +63,8 @@ $next_list_number = isset($next_list_number) ? $next_list_number : 1;
                                                 </td>
                                                 <td>
                                                     <div class="btn-group btn-group-sm">
-                                                        <a class="btn btn-default" href="<?php echo base_url("back_end/" . $active_modul . "/approve") . "/" . $record->id; ?>">Approved</a>
-                                                        <a class="btn btn-default btn-hapus-row" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/delete") . "/" . $record->id; ?>">REJECT</a>
+                                                        <a class="clsApprove btn btn-default" href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/approve") . "/" . $record->id; ?>">Approv</a>
+                                                        <a class="clsReject btn btn-default " href="javascript:void(0);" rel="<?php echo base_url("back_end/" . $active_modul . "/reject") . "/" . $record->id; ?>">REJECT</a>
                                                     </div>
                                                 </td>
                                             </tr>
