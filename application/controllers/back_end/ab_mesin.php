@@ -29,6 +29,7 @@ class ab_mesin extends Back_end{
     public function detail($id = FALSE) {
         parent::detail($id, array(
             "lokasi_mesin",
+            "ip_mesin",
             
         ));
 

@@ -16,7 +16,7 @@ class ab_daftar_cuti extends Back_end{
 public $model = 'ab_daftar_cuti_model';
 
 public function __construct() {
-parent::__construct('Cuti', 'Daftar Cuti');
+parent::__construct('Cuti', 'List Pengajuan Cuti');
 
 
 }
@@ -24,13 +24,14 @@ parent::__construct('Cuti', 'Daftar Cuti');
 public function index(){
 //parent::index();
 $id_parent = $this->lmanuser->get_back_end('user_detail')["id_skpd"];
+$id_peg = $this->lmanuser->get_back_end('user_detail')["id_pegawai_skpd"];
 //echo $id_parent;exit(); 
-//var_dump($this->lmanuser->get_back_end('user_detail')["id_skpd"]);exit();
+//var_dump($this->lmanuser->get_back_end('user_detail'));exit();
 $daftar_cuti = $this->ab_daftar_cuti_model->get_detail_by_id($id_parent);
 //var_dump($daftar_cuti);exit();
 $this->get_attention_message_from_session();
         $this->{$this->model}->change_offset_param("currpage_" . $this->cmodul_name);
-        $records = $this->{$this->model}->allparent($id_parent);
+        $records = $this->{$this->model}->allparent($id_parent,$id_peg);
 
         $paging_set = $this->get_paging($this->get_current_location(), $records->record_found, $this->default_limit_paging, $this->cmodul_name);
         $this->set('records', $records->record_set);
@@ -72,7 +73,15 @@ $this->get_attention_message_from_session();
         
         $this->to_json($mesin_found);
     }
-    
+    public function approve($param) {
+        $id_approver = $this->lmanuser->get_back_end('user_detail')["id_pegawai_skpd"];
+        $approve= $this->ab_daftar_cuti_model->approve($param,$id_approver);
+        $this->to_json($approve);
+    }
+    public function reject($param) {
+        $approve= $this->ab_daftar_cuti_model->reject($param);
+        $this->to_json($approve);
+    }
         
       
 }

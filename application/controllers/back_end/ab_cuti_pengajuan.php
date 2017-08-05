@@ -16,7 +16,7 @@ class ab_cuti_pengajuan extends Back_end{
     public $model ='ab_daftar_cuti_model';
     
     public function __construct() {
-                parent::__construct('Cuti','Daftar Cuti');
+                parent::__construct('Cuti','Pengajuan Cuti');
                
                 
     }
@@ -74,6 +74,8 @@ class ab_cuti_pengajuan extends Back_end{
         ));
           $this->set("additional_js", array(
             "back_end/".$this->_name."/js/detail_isian_js",
+               "back_end/".$this->_name."/js/detail_js",
+              
         ));
           $this->add_cssfiles(array("plugins/select2/select2.min.css"));
         $this->add_jsfiles(array("plugins/select2/select2.full.min.js"));
@@ -86,6 +88,32 @@ class ab_cuti_pengajuan extends Back_end{
         $mesin_found = $this->{$this->model}->get_like($keyword);
         
         $this->to_json($mesin_found);
+    }
+    public function insert() {
+         $param = $this->input->post();
+        $id_list =$param['id_list'];
+        if (!$id_list){
+       
+        $insert = $this->{$this->model}->insert($param);
+        
+        $this->to_json($insert);
+        
+        }else{
+           
+        $insert = $this->{$this->model}->edit2($id_list,$param);
+        
+        $this->to_json($insert);
+        }
+    }
+     public function delete2($id = FALSE) {
+//         var_dump($id);exit();
+        if ($id) {
+            $this->{$this->model}->set_non_active($id);
+            $this->store_attention_message_to_session("Data berhasil dihapus.");
+        } else {
+            $this->store_attention_message_to_session("Data tidak ditemukan.");
+        }
+        redirect($this->my_location . $this->_name . "/index/");
     }
     
         

@@ -42,7 +42,7 @@ class Cref_pegawai extends Back_end {
 
         $this->set("additional_js", array(
             "back_end/" . $this->_name . "/js/detail_js",
-            "back_end/cpeserta_diklat/js/detail_isian_js",
+            "back_end/". $this->_name . "/js/detail_isian_js",
         ));
 
         $this->add_cssfiles(array("plugins/select2/select2.min.css"));
@@ -52,9 +52,9 @@ class Cref_pegawai extends Back_end {
 
     public function get_like() {
         $keyword = $this->input->post("keyword");
-        $id_skpd = $this->input->post("id_skpd");
+//        $id_skpd = $this->input->post("id_skpd");
 
-        $data_found = $this->{$this->model}->get_like($keyword, $id_skpd);
+        $data_found = $this->{$this->model}->get_like($keyword);
 
         $this->to_json($data_found);
     }

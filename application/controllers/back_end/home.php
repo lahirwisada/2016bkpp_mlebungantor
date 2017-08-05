@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Home extends Back_end {
 
     protected $auto_load_model = FALSE;
-    
+
     public function can_access() {
         return TRUE;
     }
@@ -18,6 +18,29 @@ class Home extends Back_end {
     public function index() {
 
         $this->set("header_title", 'Home');
+// api by triasada start
+//        $url = 'http://192.168.100.15:8080/BkppRestFulServices-Api/login';
+//        $param = array('loginIn'=>array('nip'=>'195404061978031009',
+//            'password'=>'2001b9264899b6035395ce4d1a8c1139')
+//                
+//            );
+//        $ch = curl_init($url);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));
+//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+////        curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/json');
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//    'Content-Type: application/json',
+//    'Accept: application/json'
+//));
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//        $result = curl_exec($ch);
+//
+//
+//
+//        var_dump($result);exit();
+//        api by triasada end
 //        echo "eko dipanggil";exit;
 //        $this->load->model(array("model_tr_pembayaran", "model_ref_penghuni"));
 //        $terbayar_perbulan = toJsonString($this->model_tr_pembayaran->get_record_terbayar_perbulan(), FALSE);
