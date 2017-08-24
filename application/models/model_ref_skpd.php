@@ -27,93 +27,93 @@ class model_ref_skpd extends ref_skpd {
         }
     }
 
-//    public function all($force_limit = FALSE, $force_offset = FALSE) {
-//        $this->db->order_by("col_order", "asc");
-//        return parent::get_all(array(
-//                    "nama_skpd",
-////                    "col_order",
-//                    "abbr_skpd",
-//                    "alamat_skpd",
-//                    "kodepos",
-//                    "no_telp",
-//                    "email",
-//                    "website",
-//                        ), FALSE, TRUE, FALSE, 1, TRUE, $force_limit, $force_offset);
-//    }
     public function all($force_limit = FALSE, $force_offset = FALSE) {
-
-//        $result = FALSE;
-        $hasil=new stdClass();
-        
-//           api by triasada start
-        $url = 'http://103.219.112.101:8383/BkppRestFulServices-Api/skpdAutoComplete';
-        $param = array('skpdAutoCompleteIn'=>array('namaOrganisasi'=>'')
-            );
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-//        curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/json');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    'Accept: application/json'
-));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $data = curl_exec($ch);
-
-        $result=(array)json_decode($data);
-        $hasil->record_set=$result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail;
-        $hasil->record_found=count($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);
-        $hasil->keyword='';
-
-//        var_dump($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);exit();
-//        api by triasada end
-        
-        return $hasil;
+        $this->db->order_by("col_order", "asc");
+        return parent::get_all(array(
+                    "nama_skpd",
+//                    "col_order",
+                    "abbr_skpd",
+                    "alamat_skpd",
+                    "kodepos",
+                    "no_telp",
+                    "email",
+                    "website",
+                        ), FALSE, TRUE, FALSE, 1, TRUE, $force_limit, $force_offset);
     }
-    
-//    public function get_like($keyword = FALSE) {
+//    public function all($force_limit = FALSE, $force_offset = FALSE) {
 //
-//        $result = FALSE;
-//        if ($keyword) {
-//            $this->db->order_by("col_order", "asc");
-//            $where_keyword = "lower(" . $this->table_name . ".nama_skpd) LIKE lower('%" . $keyword . "%') OR ".
-//                    "lower(" . $this->table_name . ".abbr_skpd) LIKE lower('%" . $keyword . "%') ";
-//            $this->db->where($where_keyword, NULL, FALSE);
-//            $result = $this->get_where();
-//        }
-//        return $result;
+////        $result = FALSE;
+//        $hasil=new stdClass();
+//        
+////           api by triasada start
+//        $url = 'http://103.219.112.101:8383/BkppRestFulServices-Api/skpdAutoComplete';
+//        $param = array('skpdAutoCompleteIn'=>array('namaOrganisasi'=>'')
+//            );
+//        $ch = curl_init($url);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));
+//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+////        curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/json');
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//    'Content-Type: application/json',
+//    'Accept: application/json'
+//));
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//        $data = curl_exec($ch);
+//
+//        $result=(array)json_decode($data);
+//        $hasil->record_set=$result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail;
+//        $hasil->record_found=count($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);
+//        $hasil->keyword='';
+//
+////        var_dump($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);exit();
+////        api by triasada end
+//        
+//        return $hasil;
 //    }
     
     public function get_like($keyword = FALSE) {
 
         $result = FALSE;
         if ($keyword) {
-//           api by triasada start
-        $url = 'http://103.219.112.101:8383/BkppRestFulServices-Api/skpdAutoComplete';
-        $param = array('skpdAutoCompleteIn'=>array('namaOrganisasi'=>$keyword)
-            );
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-//        curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/json');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    'Accept: application/json'
-));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $data = curl_exec($ch);
-
-        $result=(array)json_decode($data);
-
-//        var_dump($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);exit();
-//        api by triasada end
+            $this->db->order_by("col_order", "asc");
+            $where_keyword = "lower(" . $this->table_name . ".nama_skpd) LIKE lower('%" . $keyword . "%') OR ".
+                    "lower(" . $this->table_name . ".abbr_skpd) LIKE lower('%" . $keyword . "%') ";
+            $this->db->where($where_keyword, NULL, FALSE);
+            $result = $this->get_where();
         }
-        return $result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail;
+        return $result;
     }
+    
+//    public function get_like($keyword = FALSE) {
+//
+//        $result = FALSE;
+//        if ($keyword) {
+////           api by triasada start
+//        $url = 'http://103.219.112.101:8383/BkppRestFulServices-Api/skpdAutoComplete';
+//        $param = array('skpdAutoCompleteIn'=>array('namaOrganisasi'=>$keyword)
+//            );
+//        $ch = curl_init($url);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($param));
+//        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+////        curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/json');
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//    'Content-Type: application/json',
+//    'Accept: application/json'
+//));
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//        $data = curl_exec($ch);
+//
+//        $result=(array)json_decode($data);
+//
+////        var_dump($result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail);exit();
+////        api by triasada end
+//        }
+//        return $result['skpdAutoCompleteOut']->skpdAutoCompleteList->skpdAutoCompleteDetail;
+//    }
 }
 
 ?>
