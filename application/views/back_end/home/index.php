@@ -16,14 +16,14 @@ $header_title = isset($header_title) ? $header_title : '';
     </div>
 </div>
 
-<div class="row">
+<!--<div class="row">
     <div class="col-md-4">
         <div class="col-md-12 clearfix">
             <h4 class="pull-left" style="margin: 0 0 20px;">Pendapatan</h4>
-            <!--                        <div class="btn-group pull-right">
+                                    <div class="btn-group pull-right">
                                         <a href="javascript:;" class="btn btn-default btn-sm active">this week</a>
                                         <a href="javascript:;" class="btn btn-default btn-sm ">previous week</a>
-                                    </div>-->
+                                    </div>
         </div>
         <div class="col-md-12">
             <div id="plot-pendapatan" style="height:250px;"></div>
@@ -33,22 +33,22 @@ $header_title = isset($header_title) ? $header_title : '';
     <div class="col-md-4">
         <div class="col-md-12 clearfix">
             <h4 class="pull-left" style="margin: 0 0 20px;">Pendaftaran Penghuni</h4>
-            <!--                        <div class="btn-group pull-right">
+                                    <div class="btn-group pull-right">
                                         <a href="javascript:;" class="btn btn-default btn-sm active">2012</a>
                                         <a href="javascript:;" class="btn btn-default btn-sm ">2011</a>
                                         <a href="javascript:;" class="btn btn-default btn-sm ">2010</a>
-                                    </div>-->
+                                    </div>
         </div>
         <div class="col-md-12">
             <div id="plot-penghuni" style="height:250px;"></div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div class="row">
-    <div class="col-md-4">
+<!--    <div class="col-md-4">
 
-        <!-- START SALES & EVENTS BLOCK -->
+         START SALES & EVENTS BLOCK 
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title-box">
@@ -71,17 +71,17 @@ $header_title = isset($header_title) ? $header_title : '';
                 <div class="chart-holder" id="dashboard-line-1" style="height: 200px;"></div>
             </div>
         </div>
-        <!-- END SALES & EVENTS BLOCK -->
+         END SALES & EVENTS BLOCK 
 
-    </div>
-    <div class="col-md-4">
+    </div>-->
+    <div class="col-md-12">
 
         <!-- START USERS ACTIVITY BLOCK -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title-box">
-                    <h3>Users Activity</h3>
-                    <span>Users vs returning</span>
+                    <h3>Staff Performance</h3>
+                    <span>absensi</span>
                 </div>                                    
                 <ul class="panel-controls" style="margin-top: 2px;">
                     <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
@@ -96,18 +96,27 @@ $header_title = isset($header_title) ? $header_title : '';
                 </ul>                                    
             </div>                                
             <div class="panel-body padding-0">
-                <div class="chart-holder" id="dashboard-bar-1" style="height: 200px;"></div>
+                <div class="chart-holder" id="dashboard-bar-1" style="height: 400px;"></div>
             </div>                                    
         </div>
         <!-- END USERS ACTIVITY BLOCK -->
 
     </div>
-
+<!--<div class="col-md-4 ">
+    <div class="panel-heading">
+                <div class="panel-title-box">
+                    <h3>Self Performance</h3>
+                </div>                                  
+            </div>                                
+            <div class="panel-body padding-0">
+                <div class="chart-holder" id="dashboard-bar-2" style="height: 200px;"></div>
+            </div>  
+</div>-->
 
     <div class="col-md-4">
 
         <!-- START PROJECTS BLOCK -->
-        <div class="panel panel-default">
+<!--        <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="panel-title-box">
                     <h3>Diklat</h3>
@@ -165,7 +174,7 @@ $header_title = isset($header_title) ? $header_title : '';
                 </div>
 
             </div>
-        </div>
+        </div>-->
         <!-- END PROJECTS BLOCK -->
 
     </div>
