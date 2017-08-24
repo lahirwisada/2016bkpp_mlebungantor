@@ -1,79 +1,79 @@
 <?php
 $terbayar_perbulan = isset($terbayar_perbulan) ? $terbayar_perbulan : "[]";
-$pendaftar_perbulan = isset($pendaftar_perbulan) ? $pendaftar_perbulan : "[]";
+$pendaftar_perbulan = isset($pendaftar_perbulan) ? $pendaftar_perbulan : "[2,3,4,5,6,7,8,9]";
 $var_bulan = isset($var_bulan) ? $var_bulan : "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]";
 ?>
 
 <script type="text/javascript">
 
-    var plot = {
-        data_series: {data: null, label: 'Label'},
-        plot_setting: {
-            series: {
-                lines: {
-                    show: true,
-                    lineWidth: 1.5,
-                    fill: 0.05
-                },
-                points: {
-                    show: true
-                },
-                shadowSize: 0
-            },
-            grid: {
-                labelMargin: 10,
-                hoverable: true,
-                clickable: true,
-                borderWidth: 0
-            },
-            colors: ["#71a5e7"],
-            xaxis: {
-                tickColor: "transparent",
-                ticks: <?php echo $var_bulan; ?>,
-                tickDecimals: 0,
-                autoscaleMargin: 0,
-                font: {
-                    color: '#8c8c8c',
-                    size: 12
-                }
-            },
-            yaxis: {
-                ticks: 4,
-                tickDecimals: 0,
-                tickColor: "#e3e4e6",
-                font: {
-                    color: '#8c8c8c',
-                    size: 12
-                },
-                tickFormatter: function (val, axis) {
-                    if (val > 999999) {
-                        return (val / 1000000) + " Jt";
-                    } else if (val > 999) {
-                        return (val / 1000) + " Rb";
-                    } else {
-                        return val;
-                    }
-//                return val;
-                }
-            },
-            legend: {
-                labelBoxBorderColor: 'transparent'
-            }
-        },
-        create_plot: function (element, data_series, label_series) {
-            plot.data_series.data = data_series;
-            plot.data_series.label = label_series
-            return $.plot(element, [plot.data_series], plot.plot_setting);
-        },
-        init: function () {
-            this.create_plot($("#plot-pendapatan"), <?php echo $terbayar_perbulan; ?>, 'Pendapatan');
-            this.create_plot($("#plot-penghuni"), <?php echo $pendaftar_perbulan; ?>, 'Pendaftar');
-        }
-    };
-
-    $(document).ready(function () {
-        plot.init();
-    });
+//    var plot = {
+//        data_series: {data: null, label: 'Label'},
+//        plot_setting: {
+//            series: {
+//                lines: {
+//                    show: true,
+//                    lineWidth: 1.5,
+//                    fill: 0.05
+//                },
+//                points: {
+//                    show: true
+//                },
+//                shadowSize: 0
+//            },
+//            grid: {
+//                labelMargin: 10,
+//                hoverable: true,
+//                clickable: true,
+//                borderWidth: 0
+//            },
+//            colors: ["#71a5e7"],
+//            xaxis: {
+//                tickColor: "transparent",
+//                ticks: <?php echo $var_bulan; ?>,
+//                tickDecimals: 0,
+//                autoscaleMargin: 0,
+//                font: {
+//                    color: '#8c8c8c',
+//                    size: 12
+//                }
+//            },
+//            yaxis: {
+//                ticks: 4,
+//                tickDecimals: 0,
+//                tickColor: "#e3e4e6",
+//                font: {
+//                    color: '#8c8c8c',
+//                    size: 12
+//                },
+//                tickFormatter: function (val, axis) {
+//                    if (val > 999999) {
+//                        return (val / 1000000) + " Jt";
+//                    } else if (val > 999) {
+//                        return (val / 1000) + " Rb";
+//                    } else {
+//                        return val;
+//                    }
+////                return val;
+//                }
+//            },
+//            legend: {
+//                labelBoxBorderColor: 'transparent'
+//            }
+//        },
+//        create_plot: function (element, data_series, label_series) {
+//            plot.data_series.data = data_series;
+//            plot.data_series.label = label_series
+//            return $.plot(element, [plot.data_series], plot.plot_setting);
+//        },
+//        init: function () {
+//            this.create_plot($("#plot-pendapatan"), <?php echo $terbayar_perbulan; ?>, 'Pendapatan');
+//            this.create_plot($("#plot-penghuni"), <?php echo $pendaftar_perbulan; ?>, 'Pendaftar');
+//        }
+//    };
+//
+//    $(document).ready(function () {
+//        plot.init();
+//    });
 
     $(function () {
         /* reportrange */
@@ -109,23 +109,30 @@ $var_bulan = isset($var_bulan) ? $var_bulan : "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1
         Morris.Bar({
             element: 'dashboard-bar-1',
             data: [
-                {y: 'Oct 10', a: 75, b: 35},
-                {y: 'Oct 11', a: 64, b: 26},
-                {y: 'Oct 12', a: 78, b: 39},
-                {y: 'Oct 13', a: 82, b: 34},
-                {y: 'Oct 14', a: 86, b: 39},
-                {y: 'Oct 15', a: 94, b: 40},
-                {y: 'Oct 16', a: 96, b: 41}
+                {y: 'jan', a: 75, b: 35},
+                {y: 'feb', a: 64, b: 26},
+                {y: 'mar', a: 78, b: 39},
+                {y: 'apr', a: 82, b: 34},
+                {y: 'may', a: 86, b: 39},
+                {y: 'jun', a: 94, b: 40},
+                {y: 'jul', a: 96, b: 41},
+                {y: 'aug', a: 75, b: 35},
+                {y: 'sep', a: 64, b: 26},
+                {y: 'oct', a: 78, b: 39},
+                {y: 'nov', a: 75, b: 35},
+                {y: 'des', a: 64, b: 26}
+                
             ],
             xkey: 'y',
             ykeys: ['a', 'b'],
-            labels: ['New Users', 'Returned'],
+            labels: ['Total Staff', 'Kehadiran'],
             barColors: ['#33414E', '#3FBAE4'],
             gridTextSize: '10px',
             hideHover: true,
             resize: true,
             gridLineColor: '#E5E5E5'
         });
+         
         /* END Bar dashboard chart */
 
         /* Line dashboard chart */
